@@ -1,0 +1,76 @@
+* {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+#mainContainer {
+    border: 3px solid black;
+    background-color: lightgray;
+    padding: 10px;
+    width: 50vw;
+}
+
+#topContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeContainer {
+    display: block;
+    text-align: center;
+}
+
+#timerContainer {
+    display: block;
+    text-align: center;
+}
+
+#editTimeContainer {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+#guestContainer {
+    display: block;
+    text-align: center;
+}
+
+#bottomContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeFoul {
+    display: block;
+    text-align: center;
+}
+
+#periodContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#periodInnerContainer {
+    display: block;
+    text-align: center;
+}
+
+#mainControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#guestFoul {
+    display: block;
+    text-align: center;
+}
