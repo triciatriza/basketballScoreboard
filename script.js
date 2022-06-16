@@ -1,3 +1,4 @@
+const homeLead = document.getElementById("homeleader")
 const homeScoreEl = document.getElementById("homeScore")
 const homePlusOneEl = document.getElementById("homeplusone-btn")
 const homePlusTwoEl = document.getElementById("homeplustwo-btn")
@@ -5,11 +6,25 @@ const homePlusThreeEl = document.getElementById("homeplusthree-btn")
 const homeMinusOneEl = document.getElementById("homeminusone-btn")
 let homeCount = 0
 
+const guestLead = document.getElementById("guestleader")
+const guestScoreEl = document.getElementById("guestScore")
+const guestPlusOneEl = document.getElementById("guestplusone-btn")
+const guestPlusTwoEl = document.getElementById("guestplustwo-btn")
+const guestPlusThreeEl = document.getElementById("guestplusthree-btn")
+const guestMinusOneEl = document.getElementById("guestminusone-btn")
+let guestCount = 0
+
+
 homePlusOneEl.addEventListener("click", function () {
     homeCount = homeCount + 1
     homeScoreEl.textContent = homeCount
     if (homeCount > 0){
         homeMinusOneEl.disabled = false;
+    }
+    if (homeScoreEl.textContent > guestScoreEl.textContent){
+        homeLead.style.color = 'red'
+    } else{
+        homeLead.style.color = 'black'
     }
 })
 
@@ -19,6 +34,11 @@ homePlusTwoEl.addEventListener("click", function () {
     if (homeCount > 0){
         homeMinusOneEl.disabled = false;
     }
+    if (homeScoreEl.textContent > guestScoreEl.textContent){
+        homeLead.style.color = 'red'
+    } else{
+        homeLead.style.color = 'black'
+    }
 })
 
 homePlusThreeEl.addEventListener("click", function () {
@@ -26,6 +46,11 @@ homePlusThreeEl.addEventListener("click", function () {
     homeScoreEl.textContent = homeCount
     if (homeCount > 0){
         homeMinusOneEl.disabled = false;
+    }
+    if (homeScoreEl.textContent > guestScoreEl.textContent){
+        homeLead.style.color = 'red'
+    } else{
+        homeLead.style.color = 'black'
     }
 })
 
@@ -35,16 +60,14 @@ homeMinusOneEl.addEventListener("click", function () {
     if (homeCount < 1){
         homeMinusOneEl.disabled = true;
     }
+    if (homeScoreEl.textContent > guestScoreEl.textContent){
+        homeLead.style.color = 'red'
+    } else{
+        homeLead.style.color = 'black'
+    }
 })
 
 //Guest Score------------------------------------------------------------------------------------
-
-const guestScoreEl = document.getElementById("guestScore")
-const guestPlusOneEl = document.getElementById("guestplusone-btn")
-const guestPlusTwoEl = document.getElementById("guestplustwo-btn")
-const guestPlusThreeEl = document.getElementById("guestplusthree-btn")
-const guestMinusOneEl = document.getElementById("guestminusone-btn")
-let guestCount = 0
 
 guestPlusOneEl.addEventListener("click", function () {
     guestCount = guestCount + 1
@@ -77,6 +100,8 @@ guestMinusOneEl.addEventListener("click", function () {
         guestMinusOneEl.disabled = true;
     }
 })
+
+
 
 //------------------------------------------------------------------------------------------------------
 
@@ -145,6 +170,10 @@ newGameBtn.addEventListener("click", function () {
     stopTimer()
     minusBtn.disabled = true
     plusBtn.disabled = false
+    homeMinusOneEl.disabled = true;
+    guestMinusOneEl.disabled = true;
+    homeFoulMinusOne.disabled = true;
+    guestFoulMinusOne.disabled = true;
 })
 
 
@@ -157,14 +186,12 @@ hornBtn.addEventListener("click", function () {
 })
 
 
-
 const plusBtn = document.getElementById("plusbtn")
 const minusBtn = document.getElementById("minusbtn")
 const periodValue = document.getElementById("currentPeriod")
 let periodCounter = 0
 
-//period should only be 1-4
-//TODO: put if-else condition coz it goes beyond negative values when value is decreased lol
+
 minusBtn.addEventListener("click", function () {
     if (periodValue.textContent < 2){
         minusBtn.disabled = true
@@ -174,7 +201,6 @@ minusBtn.addEventListener("click", function () {
     periodValue.textContent = periodCounter
     
 })
-
 
 plusBtn.addEventListener("click", function () {
     if (periodValue.textContent >= 0){
@@ -187,7 +213,6 @@ plusBtn.addEventListener("click", function () {
     periodValue.textContent = periodCounter
 
 })
-
 
 
 let minuteEl = document.getElementById("minute")

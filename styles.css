@@ -1,6 +1,6 @@
 * {
     margin: auto;
-    padding: 0;
+    padding: auto;
     box-sizing: border-box;
 }
 
@@ -8,11 +8,12 @@ body {
     background-color: white;
 }
 
-#mainContainer {
+#maindiv {
+    margin-top: 30vw;
     border: 3px solid black;
     background-color: lightgray;
     padding: 10px;
-    width: 50vw;
+    width: 75vw;
 }
 
 #topContainer {
@@ -100,21 +101,4 @@ input{
 #guestFoul {
     display: block;
     text-align: center;
-}
-
-#possandbonus{
-    display: block;
-    text-align: center;
-}
-
-#poss{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#bonus{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

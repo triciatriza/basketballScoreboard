@@ -10,10 +10,10 @@
 </head>
 
 <body>
-    <div id="mainContainer">
+    <div id="maindiv">
         <div id="topContainer">
             <div id="homeContainer">
-                <h4>Home</h4>
+                <h4 id="homeleader">Home</h4>
                 <h1 id="homeScore">0</h1>
                 <div id="homeButtons">
                     <button id="homeplusone-btn">+1</button>
@@ -38,19 +38,9 @@
                     <button id="start-btn">START</button>
                     <button id="reset-btn">RESET</button>
                 </div>
-                <div id="periodContainer">
-                    <div id="periodInnerContainer">
-                        <h4>Period</h4>
-                        <div id="periodButtons">
-                            <button id="minusbtn" disabled>-</button>
-                            <button id="plusbtn">+</button>
-                        </div>
-                    </div>
-                    <h1 id="currentPeriod">0</h1>
-                </div>
             </div>
             <div id="guestContainer">
-                <h4>Guest</h4>
+                <h4 id="guestleader">Guest</h4>
                 <h1 id="guestScore">0</h1>
                 <div id="guestButtons">
                     <button id="guestplusone-btn">+1</button>
@@ -69,17 +59,15 @@
                 <button id="homefoulminuseone-btn" disabled>-1</button>
             </div>
             <div id="otherControls">
-                <div id="possandbonus">
-                    <div id="poss">
-                        <button>left</button>
-                        <p>POSS</p>
-                        <button>right</button>
+                <div id="periodContainer">
+                    <div id="periodInnerContainer">
+                        <h4>Period</h4>
+                        <div id="periodButtons">
+                            <button id="minusbtn" disabled>-</button>
+                            <button id="plusbtn">+</button>
+                        </div>
                     </div>
-                    <div id="bonus">
-                        <button>left</button>
-                        <p>BONUS</p>
-                        <button>right</button>
-                    </div>
+                    <h1 id="currentPeriod">0</h1>
                 </div>
                 <div id="mainControls">
                     <button id="newgame-btn">NEW GAME</button>
