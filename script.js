@@ -28,9 +28,6 @@ const periodValue = document.getElementById("currentPeriod")
 let periodCounter = 0
 
 
-
-
-
 homePlusOneEl.addEventListener("click", function () {
     homeCount = homeCount + 1
     homeScoreEl.textContent = homeCount
@@ -119,26 +116,46 @@ guestFoulBtn.addEventListener("click", function () {
 
 //resets all current values
 newGameBtn.addEventListener("click", function () {
-    count = 0
-    homeScoreEl.textContent = count
-    guestScoreEl.textContent = count
-    homeFoulEl.textContent = count
-    guestFoulEl.textContent = count
-    periodValue.textContent = count
-    minuteEl.value = count 
-    secondEl.value = count
+    homeCount = 0
+    guestCount = 0
+    homeFoulCount = 0
+    guestFoulCount = 0
+    periodCounter = 0
+    homeScoreEl.textContent = homeCount
+    guestScoreEl.textContent = guestCount
+    homeFoulEl.textContent = homeFoulCount
+    guestFoulEl.textContent = guestFoulCount
+    periodValue.textContent = periodCounter
+    minuteEl.value = 0 
+    secondEl.value = 0 
+    stopTimer()
+    minusBtn.disabled = true
+    plusBtn.disabled = false
 })
 
 //period should only be 1-4
 //TODO: put if-else condition coz it goes beyond negative values when value is decreased lol
-plusBtn.addEventListener("click", function () {
-    periodCounter = periodCounter + 1
-    periodValue.textContent = periodCounter
-})
-
 minusBtn.addEventListener("click", function () {
+    if (periodValue.textContent < 2){
+        minusBtn.disabled = true
+        plusBtn.disabled = false
+    }
     periodCounter = periodCounter - 1
     periodValue.textContent = periodCounter
+    
+})
+
+
+plusBtn.addEventListener("click", function () {
+    if (periodValue.textContent >= 0){
+        minusBtn.disabled = false
+    }
+    if (periodValue.textContent > 2){
+        plusBtn.disabled = true
+    }
+    periodCounter = periodCounter + 1
+    periodValue.textContent = periodCounter
+
 })
 
 
