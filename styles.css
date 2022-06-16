@@ -44,9 +44,18 @@ input{
     text-align: center;
 }
 
-
 #second{
     margin-left: 14px;
+}
+
+#editTimeContainer{
+    display: block;
+}
+
+#timelabels{
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }
 
 #minAndSec{
@@ -91,4 +100,21 @@ input{
 #guestFoul {
     display: block;
     text-align: center;
+}
+
+#possandbonus{
+    display: block;
+    text-align: center;
+}
+
+#poss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bonus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

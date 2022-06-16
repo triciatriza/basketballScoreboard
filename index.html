@@ -19,10 +19,15 @@
                     <button id="homeplusone-btn">+1</button>
                     <button id="homeplustwo-btn">+2</button>
                     <button id="homeplusthree-btn">+3</button>
+                    <button id="homeminusone-btn" disabled>-1</button>
                 </div>
             </div>
             <div id="timerContainer">
                 <div id="editTimeContainer">
+                    <div id="timelabels">
+                        <p>Min</p>
+                        <p>Sec</p>
+                    </div>
                     <div id="minAndSec">
                         <input id="minute" type="number" max="99" min="0" value="0">
                         <p>:</p>
@@ -33,25 +38,6 @@
                     <button id="start-btn">START</button>
                     <button id="reset-btn">RESET</button>
                 </div>
-            </div>
-            <div id="guestContainer">
-                <h4>Guest</h4>
-                <h1 id="guestScore">0</h1>
-                <div id="guestButtons">
-                    <button id="guestplusone-btn">+1</button>
-                    <button id="guestplustwo-btn">+2</button>
-                    <button id="guestplusthree-btn">+3</button>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div id="bottomContainer">
-            <div id="homeFoul">
-                <h5>Foul</h5>
-                <h1 id="homeCurrentFoul">0</h1>
-                <button id="homefoul-btn">+1</button>
-            </div>
-            <div id="otherControls">
                 <div id="periodContainer">
                     <div id="periodInnerContainer">
                         <h4>Period</h4>
@@ -62,6 +48,39 @@
                     </div>
                     <h1 id="currentPeriod">0</h1>
                 </div>
+            </div>
+            <div id="guestContainer">
+                <h4>Guest</h4>
+                <h1 id="guestScore">0</h1>
+                <div id="guestButtons">
+                    <button id="guestplusone-btn">+1</button>
+                    <button id="guestplustwo-btn">+2</button>
+                    <button id="guestplusthree-btn">+3</button>
+                    <button id="guestminusone-btn" disabled>-1</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="bottomContainer">
+            <div id="homeFoul">
+                <h5>Foul</h5>
+                <h1 id="homeCurrentFoul">0</h1>
+                <button id="homefoul-btn">+1</button>
+                <button id="homefoulminuseone-btn" disabled>-1</button>
+            </div>
+            <div id="otherControls">
+                <div id="possandbonus">
+                    <div id="poss">
+                        <button>left</button>
+                        <p>POSS</p>
+                        <button>right</button>
+                    </div>
+                    <div id="bonus">
+                        <button>left</button>
+                        <p>BONUS</p>
+                        <button>right</button>
+                    </div>
+                </div>
                 <div id="mainControls">
                     <button id="newgame-btn">NEW GAME</button>
                     <button id="horn-btn">HORN</button>
@@ -71,6 +90,7 @@
                 <h5>Foul</h5>
                 <h1 id="guestCurrentFoul">0</h1>
                 <button id="guestfoul-btn">+1</button>
+                <button id="guestfoulminuseone-btn" disabled>-1</button>
             </div>
         </div>
     </div>
