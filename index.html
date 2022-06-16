@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Basketball Scoreboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="mainContainer">
         <div id="topContainer">
@@ -20,17 +22,15 @@
                 </div>
             </div>
             <div id="timerContainer">
-                <p id="currentTimer">00:00</p>
                 <div id="editTimeContainer">
                     <div id="minAndSec">
-                        <input id="editMinutes" type="number">
-                        <input id="editSeconds" type="number">
+                        <input id="minute" type="number" max="99" min="0" value="0">
+                        <p>:</p>
+                        <input id="second" type="number" max="60" min="0" value="0">
                     </div>
-                    <button id="setTimer-btn">SET TIMER</button>
                 </div>
-                <div id="startStopAndResetContainer">
+                <div id="startAndResetContainer">
                     <button id="start-btn">START</button>
-                    <button id="stop-btn">STOP</button>
                     <button id="reset-btn">RESET</button>
                 </div>
             </div>
@@ -76,4 +76,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

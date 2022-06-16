@@ -35,6 +35,24 @@ body {
     display: flex;
     justify-items: center;
     align-items: center;
+    margin-bottom: 10px;
+}
+
+input{
+    border: none;
+    background-color: #ffffff00;
+    text-align: center;
+}
+
+
+#second{
+    margin-left: 14px;
+}
+
+#minAndSec{
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }
 
 #guestContainer {

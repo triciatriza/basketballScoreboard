@@ -20,12 +20,14 @@ let guestFoulCount = 0
 
 const newGameBtn = document.getElementById("newgame-btn")
 
+const hornBtn = document.getElementById("horn-btn")
+
 const plusBtn = document.getElementById("plusbtn")
 const minusBtn = document.getElementById("minusbtn")
 const periodValue = document.getElementById("currentPeriod")
 let periodCounter = 0
 
-const hornBtn = document.getElementById("horn-btn")
+
 
 
 
@@ -44,20 +46,46 @@ homePlusThreeEl.addEventListener("click", function () {
     homeScoreEl.textContent = homeCount
 })
 
-//timer
-let timerEl = document.getElementById("currentTimer") //time displayed
-let minuteEl = document.getElementById("editMinutes").value //minutes
-let secondEl = document.getElementById("editSeconds").value //seconds
-const setTimer = document.getElementById("setTimer-btn")
+let minuteEl = document.getElementById("minute")
+let secondEl = document.getElementById("second")
 const startBtn = document.getElementById("start-btn")
-const stopBtn = document.getElementById("stop-btn")
 const resetBtn = document.getElementById("reset-btn")
 
-setTimer.addEventListener("click", function () {
-    let minuteEl = document.getElementById("editMinutes").value //minutes
-    let secondEl = document.getElementById("editSeconds").value //seconds
-    timerEl.innerHTML = `${minuteEl}:${secondEl}`
+let startTimer = null
+
+function timer(){
+    if(minuteEl.value == 0 && secondEl.value == 0){
+        minuteEl.value = 0
+        secondEl.value = 0
+    } else if(secondEl.value != 0){
+        secondEl.value--
+    } else if(minuteEl.value !=0 && secondEl.value == 0){
+        secondEl.value = 59;
+        minuteEl.value--
+    }
+    return;
+}
+
+function stopTimer(){
+    clearInterval(startTimer)
+}
+
+startBtn.addEventListener("click", function(){
+    function startInterval(){
+        startTimer = setInterval(function(){
+            timer();
+        }, 1000)
+    }
+    startInterval()
 })
+
+resetBtn.addEventListener("click", function(){
+    minuteEl.value = 0 
+    secondEl.value = 0 
+    stopTimer()
+})
+
+
 
 
 
@@ -77,6 +105,7 @@ guestPlusThreeEl.addEventListener("click", function () {
 
 
 
+
 homeFoulBtn.addEventListener("click", function () {
     homeFoulCount = homeFoulCount + 1
     homeFoulEl.textContent = homeFoulCount
@@ -87,6 +116,7 @@ guestFoulBtn.addEventListener("click", function () {
     guestFoulEl.textContent = guestFoulCount
 })
 
+
 //resets all current values
 newGameBtn.addEventListener("click", function () {
     count = 0
@@ -95,6 +125,8 @@ newGameBtn.addEventListener("click", function () {
     homeFoulEl.textContent = count
     guestFoulEl.textContent = count
     periodValue.textContent = count
+    minuteEl.value = count 
+    secondEl.value = count
 })
 
 //period should only be 1-4
@@ -109,7 +141,9 @@ minusBtn.addEventListener("click", function () {
     periodValue.textContent = periodCounter
 })
 
-hornBtn.addEventListener("click", function(){
+
+
+hornBtn.addEventListener("click", function () {
     const audio = new Audio()
     audio.src = "./buzzer.mp3"
     audio.play()
