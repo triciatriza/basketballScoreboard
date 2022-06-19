@@ -14,17 +14,11 @@ const guestPlusThreeEl = document.getElementById("guestplusthree-btn")
 const guestMinusOneEl = document.getElementById("guestminusone-btn")
 let guestCount = 0
 
-
 homePlusOneEl.addEventListener("click", function () {
     homeCount = homeCount + 1
     homeScoreEl.textContent = homeCount
     if (homeCount > 0){
         homeMinusOneEl.disabled = false;
-    }
-    if (homeScoreEl.textContent > guestScoreEl.textContent){
-        homeLead.style.color = 'red'
-    } else{
-        homeLead.style.color = 'black'
     }
 })
 
@@ -34,11 +28,6 @@ homePlusTwoEl.addEventListener("click", function () {
     if (homeCount > 0){
         homeMinusOneEl.disabled = false;
     }
-    if (homeScoreEl.textContent > guestScoreEl.textContent){
-        homeLead.style.color = 'red'
-    } else{
-        homeLead.style.color = 'black'
-    }
 })
 
 homePlusThreeEl.addEventListener("click", function () {
@@ -47,11 +36,6 @@ homePlusThreeEl.addEventListener("click", function () {
     if (homeCount > 0){
         homeMinusOneEl.disabled = false;
     }
-    if (homeScoreEl.textContent > guestScoreEl.textContent){
-        homeLead.style.color = 'red'
-    } else{
-        homeLead.style.color = 'black'
-    }
 })
 
 homeMinusOneEl.addEventListener("click", function () {
@@ -59,11 +43,6 @@ homeMinusOneEl.addEventListener("click", function () {
     homeScoreEl.textContent = homeCount
     if (homeCount < 1){
         homeMinusOneEl.disabled = true;
-    }
-    if (homeScoreEl.textContent > guestScoreEl.textContent){
-        homeLead.style.color = 'red'
-    } else{
-        homeLead.style.color = 'black'
     }
 })
 
@@ -174,6 +153,8 @@ newGameBtn.addEventListener("click", function () {
     guestMinusOneEl.disabled = true;
     homeFoulMinusOne.disabled = true;
     guestFoulMinusOne.disabled = true;
+    homeLead.style.color = 'white'
+    guestLead.style.color = 'white'
 })
 
 

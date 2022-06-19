@@ -1,19 +1,83 @@
+@font-face {
+    font-family: 'Cursed Timer ULiL';
+    src: url(./CursedTimerUlil-Aznm.ttf);
+}
+
 * {
     margin: auto;
     padding: auto;
     box-sizing: border-box;
+    /* border: 0.125rem solid red; */
+    justify-content: center;
 }
 
 body {
     background-color: white;
+    height: 85vh;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 209, 67, 1) 0%, rgba(255, 145, 83, 1) 90%);
+}
+
+.bg-image {
+    background-image: url("background.jpg");
+}
+
+
+h1 {
+    font-family: 'Cursed Timer ULiL';
+    color: #F94F6D;
+    padding: 0.625rem;
+    font-size: 5rem;
+    background-color: #080001;
+    border-radius: 0.3125rem;
+    text-shadow: 0 0 10px #F94F6D;
+}
+
+h4 {
+    font-family: 'Verdana';
+    color: white;
+    font-size: 2.1875rem;
+}
+
+h5 {
+    font-family: 'Verdana';
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.625rem;
+}
+
+.counterbuttons {
+    font-family: 'Cursed Timer ULiL';
+    color: #9AABD8;
+    background-color: #1B244A;
+    border-style: none;
+    border: 2px solid #9AABD8;
+    padding: 0.0625rem 0.3125rem;
+    border-radius: 0.125rem;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    margin-bottom: 1.25rem;
+    margin-top: 0.3125rem;
+}
+
+.counterbuttons:hover {
+    background-color: #9AABD8;
+    color: rgba(27, 36, 74, 0.95);
 }
 
 #maindiv {
-    margin-top: 30vw;
-    border: 3px solid black;
-    background-color: lightgray;
-    padding: 10px;
-    width: 75vw;
+    margin-top: 6vw;
+    background-color: #1B244A;
+    padding: 2.5rem;
+    width: 65vw;
+    height: 75vh;
+    border-radius: 0.625rem;
+    padding-top: 45px;
+    background: rgba(27, 36, 74, 0.95);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 #topContainer {
@@ -27,6 +91,16 @@ body {
     text-align: center;
 }
 
+#homeScore {
+    height: 6.25rem;
+    margin: 0.625rem -0.0625rem;
+}
+
+#guestScore {
+    height: 6.25rem;
+    margin: 0.625rem 0rem;
+}
+
 #timerContainer {
     display: block;
     text-align: center;
@@ -36,30 +110,59 @@ body {
     display: flex;
     justify-items: center;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
-input{
+#timelabels {
+    color: white;
+    font-family: 'Verdana';
+    font-weight: bold;
+}
+
+#minAndSec {
+    background-color: #080001;
+    margin-top: 0.625rem;
+    border-radius: 0.3125rem;
+}
+
+#timercolon {
+    font-size: 4.375rem;
+    color: #ff9800;
+    text-shadow: 0 0 10px #ff9800;
+    font-family: 'Cursed Timer ULiL';
+}
+
+input {
     border: none;
     background-color: #ffffff00;
     text-align: center;
+    font-family: 'Cursed Timer ULiL';
+    width: 7.8125rem;
+    height: 6.25rem;
+    font-size: 4.375rem;
+    color: #ff9800;
+    text-shadow: 0 0 10px #ff9800;
 }
 
-#second{
-    margin-left: 14px;
+#second {
+    margin-left: 0.625rem;
 }
 
-#editTimeContainer{
+#minute {
+    margin-left: 0.625rem;
+}
+
+#editTimeContainer {
     display: block;
 }
 
-#timelabels{
+#timelabels {
     display: flex;
     justify-items: center;
     align-items: center;
 }
 
-#minAndSec{
+#minAndSec {
     display: flex;
     justify-items: center;
     align-items: center;
@@ -72,8 +175,9 @@ input{
 
 #bottomContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 1.25rem;
 }
 
 #homeFoul {
@@ -101,4 +205,42 @@ input{
 #guestFoul {
     display: block;
     text-align: center;
+}
+
+#homeCurrentFoul {
+    height: 6.25rem;
+    margin: 0.625rem 0px;
+}
+
+#guestCurrentFoul {
+    height: 6.25rem;
+    margin: 0.625rem 0px;
+}
+
+.otherbuttons {
+    color: #9AABD8;
+    background-color: rgba(27, 36, 74, 0.95);
+    border-style: none;
+    border: 2px solid #9AABD8;
+    font-family: 'Verdana';
+    padding: 0.625rem 0.9375rem;
+    border-radius: 0.3125rem;
+    margin: 0rem 0.3125rem;
+}
+
+.otherbuttons:hover {
+    background-color: #9AABD8;
+    color: #1B244A;
+}
+
+#otherControls {
+    width: 18.75rem;
+}
+
+#periodContainer {
+    margin-bottom: 0.625rem;
+}
+
+#currentPeriod {
+    height: 6.25rem;
 }
